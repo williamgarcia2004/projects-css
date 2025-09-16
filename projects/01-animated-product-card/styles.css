@@ -1,0 +1,107 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body { 
+    background-color: rgb(12, 12, 12);
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;    
+    box-shadow: 0 0 200px darkblue;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: all 850ms ease-in 500ms;
+
+    &:hover {
+        transition: all 850ms ease-in 350ms;
+        background-color: rgb(95, 97, 197);
+        border-radius: 10px;
+        width: 480px;
+    }
+
+    &:hover .product-logo {
+        transform: scale(0);
+        opacity: 1;
+        transition: all 850ms ease-in 100ms;
+    }
+
+    &:hover .product-info {
+        opacity: 1;
+        transform: translateX(90px);
+        transition: all ease 650ms 650ms;
+    }
+
+    &:hover .product-image {
+        opacity: 1;
+        transform: scale(1) translateX(50px) translateY(-75px) rotate(-340deg);
+        transition: all ease 650ms 650ms;
+    }
+}
+
+.product-logo {
+    width: 150px;
+    height: 100px;
+    transform: scale(1);
+    opacity: 1;
+
+    transition: all 850ms ease-in 500ms;
+}
+
+.product-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transform: translateX(70px);
+    opacity: 0;
+    transition: all ease 650ms 250ms;
+}
+
+.product-description {
+    width: 250px;
+}
+
+.product-buy {
+    padding: 10px 15px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border: 0;
+    outline: 0;
+    background-color: rgb(173, 28, 57);
+
+    align-self: flex-start;
+}
+
+.product-image {
+    width: 250px;
+    height: 350px;
+    opacity: 0;
+    transform: scale(0) translateX(70px) translateY(0) rotate(-20deg);
+
+    transition: all ease 650ms 250ms;
+}
